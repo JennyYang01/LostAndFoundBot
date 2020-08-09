@@ -6,7 +6,7 @@ from flask import g
 
 DATABASE = 'lost_and_found.db'
 app = Flask(__name__)
-ACCESS_TOKEN = 'EAAEctZAzctfIBAOku9J0VXlk83nAysNxeDRRUD0aeUFY6NMiP859XhymgDprEs2sVC9sbZAHwF6gUjRZClfxc5kGeg7m8zXqsdmJL92kyFCzHQCzsKzA9rZCZBE9ytHZASLDv6DxQct0yP4TTEDkKDndcdV26Fpg46hnq4oxLNJgZDZD'
+ACCESS_TOKEN = 'TEST_ACCESS_TOKEN'
 VERIFY_TOKEN = 'TEST_VERIFY_TOKEN'
 bot = Bot(ACCESS_TOKEN)
 
