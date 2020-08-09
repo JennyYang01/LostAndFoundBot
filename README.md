@@ -15,3 +15,10 @@ To start app locally:
 ```
 python app.py
 ```
+
+To initialize database:
+
+```
+export FLASK_APP=app
+flask init-db
+```
