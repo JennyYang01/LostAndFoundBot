@@ -1,5 +1,6 @@
 from flask import Flask, request
 from pymessenger.bot import Bot
+from flask_sqlalchemy import SQLAlchemy
 import click
 import sqlite3
 from flask import g
@@ -92,6 +93,24 @@ def init_db_command():
     # Clear the existing data and create new tables.
     init_db()
     click.echo('Initialized the database.')
+
+
+def query_db(query, args=(), one=False):
+    cur = get_db().execute(query, args)
+    rv = cur.fetchall()
+    cur.close()
+    return (rv[0] if rv else None) if one else rv
+
+
+def create_user():
+    query_db("INSERT INTO user (name, age, height, weight, if_found) VALUES ('Jenny', 20, 162, 100, 0)")
+
+
+@app.cli.command("create-user")
+def create_user_command():
+    # Clear the existing data and create new tables.
+    create_user()
+    click.echo('Created user')
 
 
 if __name__ == '__main__':
