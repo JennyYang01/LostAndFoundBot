@@ -102,8 +102,8 @@ def query_db(query, args=(), one=False):
     return (rv[0] if rv else None) if one else rv
 
 
-def create_user():
-    query_db("INSERT INTO user (name, age, height, weight, if_found) VALUES ('Jenny', 20, 162, 100, 0)")
+def create_user(name):
+    query_db("INSERT INTO user (name, age, height, weight, if_found) VALUES ('" + name + "', 20, 162, 100, 0)")
 
 
 @app.cli.command("create-user")
