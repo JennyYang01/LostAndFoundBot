@@ -106,6 +106,10 @@ def create_user(name):
     query_db("INSERT INTO user (name, age, height, weight, if_found) VALUES ('" + name + "', 20, 162, 100, 0)")
 
 
+def get_user(name):
+    query_db("SELECT (name, age, height, weight) FROM user WHERE if_found=='false' AND name=='" + name)
+
+
 @app.cli.command("create-user")
 def create_user_command():
     # Clear the existing data and create new tables.
