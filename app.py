@@ -116,6 +116,12 @@ def create_user_command():
     create_user()
     click.echo('Created user')
 
+@app.cli.command("create-user")
+def get_user_command():
+    # Clear the existing data and create new tables.
+    get_user()
+    click.echo('Created user')
+
 
 if __name__ == '__main__':
     app.run()
